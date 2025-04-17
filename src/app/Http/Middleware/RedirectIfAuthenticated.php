@@ -19,12 +19,14 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+        // もし認証されている場合
+        if (Auth::check()) {
+            // 初期体重登録がまだなら、`register-step2`にリダイレクト
+            if (Auth::user()->weight_target === null) {
+                return redirect('/register-step2');
             }
+            // それ以外はデフォルトのホームにリダイレクト
+            return redirect(RouteServiceProvider::HOME);
         }
 
         return $next($request);
