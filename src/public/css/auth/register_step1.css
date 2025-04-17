@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-image: url('https://s3-alpha-sig.figma.com/img/1729/25dc/7cf943613da9360ed1bda08b7d622846?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=PBvGEbnt3of25yQiNhLx6aym7Zaon3Pd3R5ZqunMLuFcN1hOKOogRyq53TAz~XGiLvKWlo6pCx8WAoK6Q1rYR7oaRd6kqiM4RQ9kZ3DkbUHSqj7wt6HFb0wyr9~E4PweEIL1fTaHPxn-wE9vxCS0BBjK48EFIzBCf6SaY-AyevH9J7OBbmZEQ5e1YwFBFpkyUIP3s0KQiZYqDcZGiNMmD16UXSCCaEs4-FEaYQvCaNfPmVTDICiteZ~3g6Hz0kcD9TTSOhfJypULnuOOoOCIZDdWvju1~d56vJmcjN4YPAaCQzbT~aH6NtrjGXcMoy9NIk0QAsagKdZHvb2kI2MkbQ__');
+    background-size: cover;
+    /* 画像をページ全体にフィットさせる */
+    background-position: center center;
+    /* 画像の位置を中央に */
+    background-attachment: fixed;
+    /* スクロールしても背景画像が固定される */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-family: 'Lora', serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-family: 'serif';
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.step-label {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 25px;
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #6AC6FF;
+    text-decoration: none;
+}
