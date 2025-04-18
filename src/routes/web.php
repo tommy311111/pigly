@@ -12,9 +12,9 @@ Route::post('/register/step1', [RegisterStepController::class, 'registerStep1'])
 Route::get('/register-step2', [RegisterStepController::class, 'showStep2'])->name('register.step2');
 Route::post('/register-step2', [RegisterStepController::class, 'registerStep2'])->name('register.step2.post');
 
-// ログインルートを追加
-Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
-Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+// ログインルートを修正
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login'); // ログインフォーム
+Route::post('/login', [AuthenticatedSessionController::class, 'store']); // ログイン処理
 
 // 他のルート
 Route::middleware(['auth', 'ensure.weight.registered'])->group(function () {
@@ -34,5 +34,4 @@ Route::get('/weight_logs', function () {
     return view('weight_logs'); // 必要に応じてコントローラを使っても良い
 });
 
-Route::post('/logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])
-    ->name('logout');
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');

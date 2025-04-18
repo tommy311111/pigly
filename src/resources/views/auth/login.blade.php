@@ -1,34 +1,36 @@
-@extends('layouts.guest')
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン - PIGLY</title>
+    <link rel="stylesheet" href="{{ asset('css/auth/register_step1.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>PIGLY</h2>
+        <h3>ログイン</h3>
 
-@section('css')
-<link rel="stylesheet" href="{{ asset('css/auth/login.css')}}">
-@endsection
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
 
-@section('content')
-<div class="login-form">
-  <div class="login-form__inner">
-    <form class="login-form__form" action="/login" method="post">
-      @csrf
-      <div class="login-form__group">
-        <label class="login-form__label" for="email">メールアドレス</label>
-        <input class="login-form__input" type="mail" name="email" id="email" placeholder="例: test@example.com">
-        <p class="register-form__error-message">
-          @error('email')
-          {{ $message }}
-          @enderror
-        </p>
-      </div>
-      <div class="login-form__group">
-        <label class="login-form__label" for="password">パスワード</label>
-        <input class="login-form__input" type="password" name="password" id="password" placeholder="例: coachtech1106">
-        <p>
-          @error('password')
-          {{ $message }}
-          @enderror
-        </p>
-      </div>
-      <input class="login-form__btn btn" type="submit" value="ログイン">
-    </form>
-  </div>
-</div>
-@endsection('content')
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email" placeholder="メールアドレスを入力" value="{{ old('email') }}">
+            @error('email')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
+
+            <label for="password">パスワード</label>
+            <input type="password" id="password" name="password" placeholder="パスワードを入力">
+            @error('password')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
+
+            <input type="submit" class="submit-button" value="ログイン">
+        </form>
+
+        <a class="login-link" href="{{ route('register.step1') }}">アカウント作成はこちら</a>
+    </div>
+</body>
+</html>

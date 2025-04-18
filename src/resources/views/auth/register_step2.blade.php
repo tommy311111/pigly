@@ -16,12 +16,12 @@
         <form method="POST" action="{{ route('register.step2.post') }}">
             @csrf
 
-            <label for="current_weight">現在の体重</label>
+            <label for="weight">現在の体重</label>
             <div class="weight-input-container">
-                <input type="text" id="current_weight" name="current_weight" placeholder="現在の体重を入力" value="{{ old('current_weight') }}">
+                <input type="text" id="weight" name="weight" placeholder="現在の体重を入力" value="{{ old('weight') }}">
                 <span class="weight-unit">kg</span>
             </div>
-            @error('current_weight')
+            @error('weight')
                 <div class="error-message">{{ $message }}</div>
             @enderror
 

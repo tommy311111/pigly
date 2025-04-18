@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Providers\RouteServiceProvider;
 use App\Http\Requests\UserRegisterRequest;
-use App\Http\Requests\WeightTargetRequest; 
+use App\Http\Requests\WeightTargetRequest;
+use App\Http\Requests\WeightStep2Request; 
 use App\Models\User;
+use App\Models\WeightLog;
+use App\Models\WeightTarget;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class RegisterStepController extends Controller
 {
@@ -38,14 +43,30 @@ public function showStep2()
     return view('auth.register_step2');
 }
 
-// 初期体重を登録する処理
-public function registerStep2(WeightTargetRequest $request)
+    public function registerStep2(WeightStep2Request $request)
 {
     $user = auth()->user();
 
-    $user->weight_target = $request->input('target_weight');
-    $user->save();
+   DB::transaction(function () use ($user, $request) {
+        // 目標体重を weight_targets テーブルに保存
+        WeightTarget::create([
+            'user_id' => $user->id,
+            'target_weight' => $request->input('target_weight'),
+        ]);
+
+        // 現在の体重を weight_logs テーブルに保存
+        WeightLog::create([
+            'user_id' => $user->id,
+            'date' => now()->toDateString(), // 今日の日付
+            'weight' => $request->input('weight'),
+            'calories' => null,              // 初回登録なので空でOK
+            'exercise_time' => null,
+            'exercise_content' => null,
+        ]);
+    });
 
     return redirect(RouteServiceProvider::HOME); 
 }
+
+
 }
