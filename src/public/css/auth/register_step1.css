@@ -9,9 +9,7 @@ body {
     background-attachment: fixed;
     /* スクロールしても背景画像が固定される */
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-top: 60px;
 }
 
 .form-container {
@@ -21,30 +19,38 @@ body {
     width: 100%;
     max-width: 400px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
 h2 {
     font-family: 'Lora', serif;
+    color: #EC87EF;
+    font-weight: 400;
+    font-size: 60px;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 
 h3 {
-    font-family: 'serif';
+    font-family: 'Hiragino Mincho Pro', serif;
+    font-weight: 300;
+    font-size: 30px;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 5px 0 10px 0;
 }
 
 .step-label {
     text-align: center;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: 300;
+    font-size: 16px;
 }
 
 label {
     display: block;
     margin-top: 15px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 input[type="text"],
@@ -53,32 +59,50 @@ input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
+    height: 43px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 .error-message {
-    color: red;
-    font-size: 0.85em;
+    color: #F65A5A;
+    font-size: 14px;
+    font-weight: 300;
+    height: 21px;
     margin-top: 5px;
 }
 
 .submit-button {
-    width: 100%;
+    width: 250px;
+    height: 50px;
     padding: 10px;
     margin-top: 25px;
     background: linear-gradient(to right, #A3A6E1, #FFABD9);
     border: none;
     border-radius: 5px;
     font-weight: bold;
+    font-size: 18px;
+    color: white;
     cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit-button:hover {
+    background: linear-gradient(to right, #FFABD9, #A3A6E1);
 }
 
 .login-link {
     display: block;
     text-align: center;
     margin-top: 20px;
-    color: #6AC6FF;
-    text-decoration: none;
+    color: #2C99FF;
+    text-decoration: underline;
+    text-decoration-color: #2C99FF;
+    text-decoration-thickness: 1px;
+        /* 下線の太さ */
+        text-underline-offset: 3px;
+        /* 下線と文字の間の距離 */
 }

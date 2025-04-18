@@ -29,7 +29,7 @@ class RegisterStepController extends Controller
 
         Auth::login($user);
 
-        return redirect('/register-step2');
+        return redirect()->route('register.step2');
     }
 
     // 初期体重登録画面を表示

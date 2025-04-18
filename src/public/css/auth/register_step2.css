@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-image: url('https://s3-alpha-sig.figma.com/img/1729/25dc/7cf943613da9360ed1bda08b7d622846?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=PBvGEbnt3of25yQiNhLx6aym7Zaon3Pd3R5ZqunMLuFcN1hOKOogRyq53TAz~XGiLvKWlo6pCx8WAoK6Q1rYR7oaRd6kqiM4RQ9kZ3DkbUHSqj7wt6HFb0wyr9~E4PweEIL1fTaHPxn-wE9vxCS0BBjK48EFIzBCf6SaY-AyevH9J7OBbmZEQ5e1YwFBFpkyUIP3s0KQiZYqDcZGiNMmD16UXSCCaEs4-FEaYQvCaNfPmVTDICiteZ~3g6Hz0kcD9TTSOhfJypULnuOOoOCIZDdWvju1~d56vJmcjN4YPAaCQzbT~aH6NtrjGXcMoy9NIk0QAsagKdZHvb2kI2MkbQ__');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    padding-top: 60px;
+}
+
+.form-container {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: 'Lora', serif;
+    color: #EC87EF;
+    font-weight: 400;
+    font-size: 60px;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+h3 {
+    font-family: 'Hiragino Mincho Pro', serif;
+    font-weight: 300;
+    font-size: 30px;
+    text-align: center;
+    margin: 5px 0 10px 0;
+}
+
+.step-label {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    width: calc(100% - 50px);
+    /* 右のkgを考慮して調整 */
+    padding: 10px;
+    margin-top: 5px;
+    height: 43px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.weight-input-container {
+    position: relative;
+}
+
+.weight-unit {
+    position: absolute;
+    right: 26px;
+    /* 位置を少し左に寄せる */
+    bottom: 5px;
+    /* 下揃えにするために調整 */
+    font-size: 14px;
+    color: #333;
+}
+
+.error-message {
+    color: #F65A5A;
+    font-size: 14px;
+    font-weight: 300;
+    height: 21px;
+    margin-top: 5px;
+}
+
+.submit-button {
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 25px;
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit-button:hover {
+    background: linear-gradient(to right, #FFABD9, #A3A6E1);
+}
