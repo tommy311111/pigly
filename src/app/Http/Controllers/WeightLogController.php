@@ -9,15 +9,30 @@ use App\Http\Requests\WeightLogRequest;
 
 class WeightLogController extends Controller
 {
-    // 一覧表示
-    public function index()
-    {
-        $weightLogs = WeightLog::where('user_id', Auth::id())
-            ->orderBy('date', 'desc')
-            ->get();
+    public function index(Request $request)
+{
+    $query = WeightLog::where('user_id', Auth::id());
 
-        return view('weight_logs.index', compact('weightLogs'));
+    // 日付検索（開始日と終了日）
+    if ($request->filled('start_date') && $request->filled('end_date')) {
+        $query->whereBetween('date', [$request->start_date, $request->end_date]);
     }
+
+    // ページネーション（8件ごと）
+    $weightLogs = $query->orderBy('date', 'desc')->paginate(8);
+
+    // 検索条件をビューに渡す
+    return view('weight_logs.index', compact('weightLogs'))
+        ->with('start_date', $request->start_date)
+        ->with('end_date', $request->end_date);
+}
+
+    // 登録画面の表示
+public function create()
+{
+    return view('weight_logs.create');
+}
+
 
     // 登録（モーダルなどから）
     public function store(WeightLogRequest $request)

@@ -23,8 +23,7 @@ class CreateWeightLogsTable extends Migration
             $table->string('exercise_content')->nullable();
             $table->timestamps();
 
-            // ユーザーごとの日付を一意にする制約（任意だけどおすすめ）
-            $table->unique(['user_id', 'date']);
+           $table->unique(['user_id', 'date']);
         });
     }
 

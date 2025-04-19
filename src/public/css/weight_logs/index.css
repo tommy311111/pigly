@@ -1,0 +1,206 @@
+/* 体重表示エリア */
+.summary-container {
+    display: flex;
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.summary-box {
+    text-align: center;
+}
+
+.summary-label {
+    font-weight: 300;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.summary-value {
+    font-weight: 600;
+    font-size: 40px;
+    color: #333333;
+}
+
+.summary-unit {
+    font-weight: 300;
+    font-size: 16px;
+    margin-left: 4px;
+}
+
+.summary-divider {
+    width: 1px;
+    height: 60px;
+    background-color: #CDCDCD;
+}
+
+/* 検索フォーム */
+.search-section {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-to {
+    margin: 0 5px;
+}
+
+.search-button {
+    background-color: #919191;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reset-button {
+    background-color: white;
+    color: #919191;
+    border: 1px solid #919191;
+    padding: 5px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-result-info {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* データ追加ボタン */
+.add-button-container {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    width: 200px;
+    height: 45px;
+    padding: 10px;
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: linear-gradient(to right, #FFABD9, #A3A6E1);
+}
+
+/* モーダル */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-group {
+    margin-bottom: 15px;
+}
+
+.modal-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+}
+
+/* テーブル */
+.weight-table {
+    width: 100%;
+    background: #FFFFFF;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.weight-table thead th {
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    padding: 12px;
+    text-align: left;
+    color: white;
+}
+
+.weight-table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #F7F7F7;
+}
+
+.weight-table tbody tr:hover {
+    background-color: #F7F7F7;
+}
+
+/* ページネーション */
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.page-item a {
+    color: #333;
+    padding: 8px 12px;
+    margin: 0 2px;
+    border-radius: 5px;
+}
+
+.page-item a:hover {
+    background-color: #E0DFDE;
+}
+
+.page-item.active a {
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    color: white;
+    border: none;
+}

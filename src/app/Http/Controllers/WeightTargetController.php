@@ -22,7 +22,7 @@ class WeightTargetController extends Controller
     public function update(WeightTargetRequest $request)
     {
         $user = Auth::user();
-        $user->weight_target = $request->input('target_weight');
+        $user->target_weight = $request->input('target_weight');
         $user->save();
 
         return redirect(RouteServiceProvider::HOME)->with('success', '目標体重を更新しました');

@@ -21,17 +21,11 @@ Route::middleware(['auth', 'ensure.weight.registered'])->group(function () {
     Route::resource('weight_logs', WeightLogController::class)->except(['create', 'show']);
 });
 
+
+Route::get('/weight_logs/create', [WeightLogController::class, 'create'])->name('weight_logs.create');
+
+
 Route::get('/weight_logs/goal_setting', [WeightTargetController::class, 'edit'])->name('weight_target.edit');
 Route::put('/weight_logs/goal_setting', [WeightTargetController::class, 'update'])->name('weight_target.update');
-
-Route::middleware(['auth', 'weight.registered'])->group(function () {
-    Route::get('/weight_logs', function () {
-        return view('index'); // ここが管理画面になる
-    })->name('weight_logs');
-});
-
-Route::get('/weight_logs', function () {
-    return view('weight_logs'); // 必要に応じてコントローラを使っても良い
-});
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');

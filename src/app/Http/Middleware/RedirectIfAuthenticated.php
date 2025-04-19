@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
         // もし認証されている場合
         if (Auth::check()) {
             // 初期体重登録がまだなら、`register-step2`にリダイレクト
-            if (Auth::user()->weight_target === null) {
+            if (Auth::user()->target_weight === null) {
                 return redirect('/register-step2');
             }
             // それ以外はデフォルトのホームにリダイレクト

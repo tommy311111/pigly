@@ -1,1 +1,119 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: white;
+}
+
+.header-left {
+    font-size: 40px;
+    color: #EC87EF;
+    font-weight: 400;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+}
+
+.header-btn {
+    background-color: #CDCDCD;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.content {
+    padding: 20px;
+    background-color: #F9F9F9;
+    min-height: 100vh;
+}
+
+
+.modal-overlay.show-modal {
+    background: rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.modal-group {
+    margin-bottom: 15px;
+}
+
+.modal-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-button {
+    background: white;
+    color: #919191;
+    border: 1px solid #919191;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.cancel-button:hover {
+    background-color: #f2f2f2;
+}
+
+.submit-button {
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: linear-gradient(to right, #FFABD9, #A3A6E1);
+}

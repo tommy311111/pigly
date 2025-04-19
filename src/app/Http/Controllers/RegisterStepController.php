@@ -65,7 +65,8 @@ public function showStep2()
         ]);
     });
 
-    return redirect(RouteServiceProvider::HOME); 
+    return redirect()->route('weight_logs.index');
+
 }
 
 
