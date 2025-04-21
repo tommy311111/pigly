@@ -1,0 +1,102 @@
+/* ページ中央寄せ */
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    /* ヘッダー分を考慮 */
+}
+
+/* 白背景フォーム */
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* 体重入力欄 */
+.form-group {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.kg-label {
+    font-size: 16px;
+    color: #777;
+    margin-left: 10px;
+}
+
+.error-message {
+    color: #F65A5A;
+    font-size: 14px;
+    font-weight: 300;
+    height: 21px;
+    margin-top: 5px;
+}
+
+/* ボタンの整列と統一サイズ */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.back-button,
+.submit-button {
+    width: 48%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* 戻るボタン */
+.back-button {
+    background-color: #E0DFDE;
+    color: black;
+    border: none;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #D0C9C1;
+    color: black;
+        /* ← ホバー時も文字色そのまま */
+    text-decoration: none;
+}
+
+/* 更新ボタン */
+.submit-button {
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    color: white;
+    border: none;
+}
+
+.submit-button:hover {
+    background: linear-gradient(to right, #FFABD9, #A3A6E1);
+}

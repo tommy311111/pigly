@@ -38,12 +38,30 @@
     background-color: #CDCDCD;
 }
 
-/* 検索フォーム */
-.search-section {
+/* テーブル・検索・ボタンをまとめるコンテナ */
+.table-section {
     background-color: #FFFFFF;
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* 検索フォームと追加ボタンを横並びに */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* 検索セクション */
+.search-section {
+    padding: 0;
+    /* paddingは親に任せるのでリセット */
+    margin: 0;
+    border-radius: 0;
+    background-color: transparent;
 }
 
 .search-form {
@@ -51,6 +69,7 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 .search-to {
@@ -60,10 +79,10 @@
 .search-button {
     background-color: #919191;
     color: #fff;
-    padding: 5px 15px;
+    padding: 6px 20px;
     border: none;
     border-radius: 4px;
-    font-weight: bold;
+    font-weight: normal;
     cursor: pointer;
 }
 
@@ -85,13 +104,13 @@
 /* データ追加ボタン */
 .add-button-container {
     text-align: right;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 .submit-button {
     width: 200px;
     height: 45px;
-    padding: 10px;
+    padding: 8px 14px;
     background: linear-gradient(to right, #A3A6E1, #FFABD9);
     border: none;
     border-radius: 5px;
@@ -103,6 +122,10 @@
 
 .submit-button:hover {
     background: linear-gradient(to right, #FFABD9, #A3A6E1);
+    color: white;
+        /* ← 文字色を白に固定 */
+    text-decoration: none;
+        /* ← 下線を消す */
 }
 
 /* モーダル */
@@ -165,11 +188,29 @@
     overflow: hidden;
 }
 
-.weight-table thead th {
+.weight-table thead tr {
+    position: relative;
+}
+
+.weight-table thead tr::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
     background: linear-gradient(to right, #A3A6E1, #FFABD9);
-    padding: 12px;
-    text-align: left;
-    color: white;
+}
+
+.weight-table thead th {
+    background: transparent;
+        /* 背景をなしに */
+        padding: 12px;
+        text-align: left;
+        color: #333;
+        /* 黒系の文字色 */
+        position: relative;
+        /* 擬似要素の基準にする */
 }
 
 .weight-table tbody td {
@@ -188,18 +229,19 @@
     justify-content: center;
 }
 
-.page-item a {
+.page-link {
     color: #333;
     padding: 8px 12px;
     margin: 0 2px;
     border-radius: 5px;
+    border: none;
 }
 
-.page-item a:hover {
+.page-link:hover {
     background-color: #E0DFDE;
 }
 
-.page-item.active a {
+.page-item.active .page-link {
     background: linear-gradient(to right, #A3A6E1, #FFABD9);
     color: white;
     border: none;

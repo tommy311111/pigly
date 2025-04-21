@@ -15,9 +15,14 @@
     <header class="header">
         <div class="header-left">PIGLY</div>
         <div class="header-right">
-            <a href="{{ url('/wight_logs/goal_setting') }}" class="header-btn">
-                <img src="{{ asset('images/icon-settings.svg') }}" alt="設定"> 目標体重設定
-            </a>
+            <!-- 目標体重設定ボタン（GET送信のフォームに変更） -->
+            <form method="GET" action="{{ url('/weight_logs/goal_setting') }}" style="display:inline;">
+                <button type="submit" class="header-btn">
+                    <img src="{{ asset('images/icon-settings.svg') }}" alt="設定"> 目標体重設定
+                </button>
+            </form>
+
+            <!-- ログアウトボタン -->
             <form method="POST" action="{{ route('logout') }}" style="display:inline;">
                 @csrf
                 <button type="submit" class="header-btn">
