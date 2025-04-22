@@ -110,7 +110,6 @@
 .submit-button {
     width: 200px;
     height: 45px;
-    padding: 8px 14px;
     background: linear-gradient(to right, #A3A6E1, #FFABD9);
     border: none;
     border-radius: 5px;
@@ -118,6 +117,12 @@
     font-size: 16px;
     color: white;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    /* aタグの下線を消す場合 */
 }
 
 .submit-button:hover {

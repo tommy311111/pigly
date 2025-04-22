@@ -54,13 +54,13 @@ public function create()
 
     }
 
-    // 編集フォームの表示
-    public function edit($id)
-    {
-        $weightLog = WeightLog::where('user_id', Auth::id())->findOrFail($id);
+    public function show($id)
+{
+    $weightLog = WeightLog::where('user_id', Auth::id())->findOrFail($id);
 
-        return view('weight_logs.edit', compact('weightLog'));
-    }
+    return view('weight_logs.show', compact('weightLog'));
+}
+
 
     // 更新処理
     public function update(WeightLogRequest $request, $id)
@@ -79,6 +79,7 @@ public function create()
         $weightLog = WeightLog::where('user_id', Auth::id())->findOrFail($id);
         $weightLog->delete();
 
-        return redirect()->back()->with('success', '記録を削除しました');
+        return redirect()->route('weight_logs.index')->with('success', '記録を削除しました');
+
     }
 }

@@ -21,8 +21,12 @@ Route::middleware(['auth', 'ensure.weight.registered'])->group(function () {
     Route::resource('weight_logs', WeightLogController::class)->except(['create', 'show']);
 });
 
-
 Route::get('/weight_logs/create', [WeightLogController::class, 'create'])->name('weight_logs.create');
+
+Route::get('/weight_logs/{id}', [WeightLogController::class, 'show'])->name('weight_logs.show');
+Route::put('/weight_logs/{id}/update', [WeightLogController::class, 'update'])->name('weight_logs.update');
+Route::delete('/weight_logs/{id}/delete', [WeightLogController::class, 'destroy'])->name('weight_logs.delete');
+
 
 
 Route::get('/weight_logs/goal_setting', [WeightTargetController::class, 'edit'])->name('weight_target.edit');
