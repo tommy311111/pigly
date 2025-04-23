@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="modal-overlay show-modal">
     <div class="modal-content">
         <h2 class="modal-title">Weight Logの追加</h2>

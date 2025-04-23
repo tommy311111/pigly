@@ -68,12 +68,12 @@ body {
 
 
 .modal-overlay.show-modal {
-    background: rgba(0, 0, 0, 0.5);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px;
+    background-color: rgb(150, 150, 150);
 }
 
 .modal-content {
@@ -120,12 +120,20 @@ body {
 .input-with-unit {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.input-with-unit input {
+    flex: 1;
+    min-width: 0;
 }
 
 .unit-label {
     font-size: 14px;
     color: #333;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 textarea {

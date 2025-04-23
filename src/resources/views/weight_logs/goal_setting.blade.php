@@ -8,9 +8,9 @@
 <div class="outer-container">
     <div class="form-container">
         <h2 class="text-center mb-4">目標体重設定</h2>
-        <form method="POST" action="{{ route('weight_target.update') }}" novalidate>
+        <form method="POST" action="{{ route('weight_logs.goal_setting.save') }}" novalidate>
             @csrf
-            @method('PUT')
+         
 
             <div class="form-group d-flex align-items-center">
                <input
@@ -27,13 +27,6 @@
             @error('target_weight')
                 <div class="error-message">{{ $message }}</div>
             @enderror
-
-          @if($errors->has('target_weight'))
-    <div class="error-message">
-        {{ $errors->first('target_weight') }}
-    </div>
-@endif
- 
 
 
             <div class="buttons-container">

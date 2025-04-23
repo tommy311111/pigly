@@ -1,4 +1,4 @@
-# mogitate
+# PIGLY
 
 ## 環境構築
 **Dockerビルド**
@@ -39,10 +39,24 @@ php artisan db:seed
 - Laravel8.83.3
 - MySQL8.0.26
 
-## ER図
+## テーブル設計
+![テーブル1](./table_1.png)
+![テーブル2](./table_2.png)
 
-![erd](https://github.com/user-attachments/assets/f5d46a0b-2aaf-4f59-9362-0b2fea09692c)
+## ER図
+![ER図](./er_diagram.png)
+
+## 主な画面とルート一覧
+
+| パス                     | 概要                   |
+|--------------------------|------------------------|
+| `/register/step1`        | 会員登録ステップ1      |
+| `/register-step2`        | 会員登録ステップ2      |
+| `/login`                 | ログイン               |
+| `/weight_logs`           | 体重記録一覧（ログイン後） |
+| `/weight_logs/create`    | 新規記録作成           |
+| `/weight_logs/goal_setting` | 目標体重設定        |
 
 ## URL
-- 開発環境：http://localhost/products
+- 開発環境：http://localhost
 - phpMyAdmin:：http://localhost:8080/

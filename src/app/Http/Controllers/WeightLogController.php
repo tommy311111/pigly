@@ -37,7 +37,6 @@ public function create()
     return view('weight_logs.create');
 }
 
-
     // 登録（モーダルなどから）
     public function store(WeightLogRequest $request)
     {

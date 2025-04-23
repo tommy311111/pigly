@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PIGLY</title>
+    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('css')
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap" rel="stylesheet">
@@ -16,11 +17,10 @@
         <div class="header-left">PIGLY</div>
         <div class="header-right">
             <!-- 目標体重設定ボタン（GET送信のフォームに変更） -->
-            <form method="GET" action="{{ url('/weight_logs/goal_setting') }}" style="display:inline;">
-                <button type="submit" class="header-btn">
-                    <img src="{{ asset('images/icon-settings.svg') }}" alt="設定"> 目標体重設定
-                </button>
-            </form>
+        <a href="{{ route('weight_logs.goal_setting') }}" class="header-btn">
+    <img src="{{ asset('images/icon-settings.svg') }}" alt="設定"> 目標体重設定
+</a>
+  
 
             <!-- ログアウトボタン -->
             <form method="POST" action="{{ route('logout') }}" style="display:inline;">
