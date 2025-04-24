@@ -12,12 +12,9 @@
     <header class="header">
         <div class="header-left">PIGLY</div>
         <div class="header-right">
-            <!-- 目標体重設定ボタン -->
             <a href="{{ route('weight_logs.goal_setting') }}" class="header-btn">
                 <img src="{{ asset('images/icon-settings.svg') }}" alt="設定"> 目標体重設定
             </a>
-
-            <!-- ログアウトボタン -->
             <form method="POST" action="{{ route('logout') }}" style="display:inline;">
                 @csrf
                 <button type="submit" class="header-btn">
@@ -33,7 +30,6 @@
                 <h2 class="modal-title">Weight Logを追加</h2>
                 <form action="{{ route('weight_logs.store') }}" method="POST" novalidate>
                     @csrf
-
                     <div class="modal-group">
                         <label for="date">日付 <span class="required-label">必須</span></label>
                         <input type="date" name="date" id="date" value="{{ old('date', date('Y-m-d')) }}" required placeholder="2024年1月1日">

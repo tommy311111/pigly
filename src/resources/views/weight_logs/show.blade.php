@@ -8,7 +8,6 @@
 <div class="weight-log-container">
     <h2 class="weight-log-title">Weight Log</h2>
 
-    {{-- 更新フォーム --}}
     <form action="{{ route('weight_logs.update', $weightLog->id) }}" method="POST" novalidate>
         @csrf
         @method('PUT')
@@ -45,9 +44,7 @@
 
         <div class="weight-log-group">
             <label for="exercise_time">運動時間（時:分）</label>
-            <input type="time" name="exercise_time" id="exercise_time"
-       value="{{ old('exercise_time', substr($weightLog->exercise_time, 0, 5)) }}">
-
+            <input type="time" name="exercise_time" id="exercise_time" value="{{ old('exercise_time', substr($weightLog->exercise_time, 0, 5)) }}">
             @error('exercise_time')
                 <p class="error-message">{{ $message }}</p>
             @enderror
@@ -61,22 +58,20 @@
             @enderror
         </div>
 
-        {{-- ボタンエリア --}}
         <div class="button-row">
             <div class="left-buttons">
                 <a href="{{ route('weight_logs.index') }}" class="back-button">戻る</a>
                 <button type="submit" class="update-button">更新</button>
             </div>
-    </form> {{-- ← 更新フォームの閉じタグ --}}
+        </form>
 
-            {{-- 削除フォーム --}}
-            <form method="POST" action="{{ route('weight_logs.delete', $weightLog->id) }}" class="delete-form">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="delete-button" onclick="return confirm('本当に削除しますか？')">
-                    <img src="{{ asset('images/icon-trash.svg') }}" alt="削除" class="trash-icon">
-                </button>
-            </form>
-        </div>
+        <form method="POST" action="{{ route('weight_logs.delete', $weightLog->id) }}" class="delete-form">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="delete-button" onclick="return confirm('本当に削除しますか？')">
+                <img src="{{ asset('images/icon-trash.svg') }}" alt="削除" class="trash-icon">
+            </button>
+        </form>
+    </div>
 </div>
 @endsection

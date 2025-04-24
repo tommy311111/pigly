@@ -9,22 +9,14 @@ use App\Models\User;
 
 class WeightLogsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        // ユーザーを取得（test@example.com で作成されたユーザー）
         $user = User::where('email', 'test@example.com')->first();
 
         if ($user) {
-            $weight = 70.0; // 初期体重
-
-            // 停滞期の設定
-            $plateauStart = rand(10, 20); 
-            $plateauLength = rand(3, 7); // 停滞日数（例：3〜7日間）
+            $weight = 70.0;
+            $plateauStart = rand(10, 20);
+            $plateauLength = rand(3, 7);
 
             for ($i = 0; $i < 35; $i++) {
                 $date = Carbon::today()->subDays(34 - $i);
@@ -37,7 +29,6 @@ class WeightLogsTableSeeder extends Seeder
 
                 $roundedWeight = round($weight, 1);
 
-                // 体重ログを作成
                 WeightLog::factory()->create([
                     'user_id' => $user->id,
                     'date' => $date,
@@ -45,6 +36,5 @@ class WeightLogsTableSeeder extends Seeder
                 ]);
             }
         }
-    
     }
 }

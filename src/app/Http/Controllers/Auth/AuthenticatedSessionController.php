@@ -9,34 +9,27 @@ use Illuminate\Http\RedirectResponse;
 
 class AuthenticatedSessionController extends Controller
 {
-    // ログインフォームを表示するメソッド
     public function create()
     {
-        return view('auth.login'); // ここでログインフォームのビューを返します
+        return view('auth.login');
     }
 
-    // ログイン処理を行うメソッド
     public function store(Request $request): RedirectResponse
     {
-        // バリデーション
         $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required', 'string'],
         ]);
 
-        // 認証処理
         if (Auth::attempt($request->only('email', 'password'))) {
-            // ログイン成功時のリダイレクト
-            return redirect()->intended('/weight_logs'); // ログイン後、管理画面などにリダイレクト
+            return redirect()->intended('/weight_logs');
         }
 
-        // 認証失敗時
         return back()->withErrors([
             'email' => '認証情報が一致しません。',
         ]);
     }
 
-    // ログアウト処理
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
@@ -44,6 +37,6 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login'); // ログイン画面にリダイレクト
+        return redirect('/login');
     }
 }

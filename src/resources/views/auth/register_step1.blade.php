@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="{{ asset('css/auth/register_step1.css') }}">
 @endpush
 
-
 @section('title', '新規会員登録')
 @section('heading', '新規会員登録')
 

@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<!DOCTYPE html>
-<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>@yield('title') - PIGLY</title>
@@ -17,7 +14,6 @@
         <h2>PIGLY</h2>
         <h3>@yield('heading')</h3>
         @yield('step')
-        
         @yield('content')
     </div>
 </body>

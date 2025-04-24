@@ -1,6 +1,7 @@
 @extends('layouts.guest')
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/auth/register_step1.css') }}">
+@endpush
 
 @section('title', 'ログイン')
 @section('heading', 'ログイン')

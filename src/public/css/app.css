@@ -30,7 +30,7 @@ body {
 }
 
 .header-right form {
-    margin: 0; 
+    margin: 0;
 }
 
 .header-btn {
@@ -75,12 +75,10 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgba(150, 150, 150, 0.5);
-    /* ← 半透明 */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    /* 他要素より上に */
     padding: 30px;
 }
 
@@ -174,7 +172,6 @@ textarea {
     border-radius: 5px;
 }
 
-/* 戻るボタン */
 .back-button {
     background-color: #E0DFDE;
     color: black;
@@ -185,7 +182,6 @@ textarea {
 .back-button:hover {
     background-color: #D0C9C1;
     color: black;
-    /* ← ホバー時も文字色そのまま */
     text-decoration: none;
 }
 

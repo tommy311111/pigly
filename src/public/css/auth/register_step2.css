@@ -1,6 +1,5 @@
 input[type="text"] {
     width: calc(100% - 50px);
-    /* 右のkgを考慮して調整 */
 }
 
 .weight-input-container {

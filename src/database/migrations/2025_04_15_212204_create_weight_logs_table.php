@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateWeightLogsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('weight_logs', function (Blueprint $table) {
@@ -22,16 +17,10 @@ class CreateWeightLogsTable extends Migration
             $table->time('exercise_time')->nullable();
             $table->string('exercise_content')->nullable();
             $table->timestamps();
-
-           $table->unique(['user_id', 'date']);
+            $table->unique(['user_id', 'date']);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('weight_logs');

@@ -1,4 +1,3 @@
-/* 体重表示エリア */
 .summary-container {
     display: flex;
     background-color: #FFFFFF;
@@ -38,7 +37,6 @@
     background-color: #CDCDCD;
 }
 
-/* テーブル・検索・ボタンをまとめるコンテナ */
 .table-section {
     background-color: #FFFFFF;
     padding: 20px;
@@ -46,7 +44,6 @@
     margin-bottom: 20px;
 }
 
-/* 検索フォームと追加ボタンを横並びに */
 .table-header {
     display: flex;
     justify-content: space-between;
@@ -55,10 +52,8 @@
     margin-bottom: 20px;
 }
 
-/* 検索セクション */
 .search-section {
     padding: 0;
-    /* paddingは親に任せるのでリセット */
     margin: 0;
     border-radius: 0;
     background-color: transparent;
@@ -101,7 +96,6 @@
     margin-top: 10px;
 }
 
-/* データ追加ボタン */
 .add-button-container {
     text-align: right;
     margin: 0;
@@ -117,23 +111,18 @@
     font-size: 16px;
     color: white;
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    /* aタグの下線を消す場合 */
 }
 
 .submit-button:hover {
     background: linear-gradient(to right, #FFABD9, #A3A6E1);
     color: white;
-        /* ← 文字色を白に固定 */
     text-decoration: none;
-        /* ← 下線を消す */
 }
 
-/* モーダル */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -183,7 +172,6 @@
     border-radius: 4px;
 }
 
-/* テーブル */
 .weight-table {
     width: 100%;
     background: #FFFFFF;
@@ -209,13 +197,10 @@
 
 .weight-table thead th {
     background: transparent;
-        /* 背景をなしに */
-        padding: 12px;
-        text-align: left;
-        color: #333;
-        /* 黒系の文字色 */
-        position: relative;
-        /* 擬似要素の基準にする */
+    padding: 12px;
+    text-align: left;
+    color: #333;
+    position: relative;
 }
 
 .weight-table tbody td {
@@ -227,7 +212,6 @@
     background-color: #F7F7F7;
 }
 
-/* ページネーション */
 .pagination-container {
     margin-top: 20px;
     display: flex;

@@ -1,13 +1,10 @@
-/* ページ中央寄せ */
 .outer-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 100px);
-    /* ヘッダー分を考慮 */
 }
 
-/* 白背景フォーム */
 .form-container {
     background-color: white;
     padding: 30px;
@@ -18,7 +15,6 @@
     text-align: center;
 }
 
-/* 体重入力欄 */
 .form-group {
     margin-bottom: 30px;
     display: flex;
@@ -48,7 +44,6 @@
     margin-top: 5px;
 }
 
-/* ボタンの整列と統一サイズ */
 .buttons-container {
     display: flex;
     justify-content: space-between;
@@ -74,7 +69,6 @@
     text-decoration: none;
 }
 
-/* 戻るボタン */
 .back-button {
     background-color: #E0DFDE;
     color: black;
@@ -85,11 +79,9 @@
 .back-button:hover {
     background-color: #D0C9C1;
     color: black;
-        /* ← ホバー時も文字色そのまま */
     text-decoration: none;
 }
 
-/* 更新ボタン */
 .submit-button {
     background: linear-gradient(to right, #A3A6E1, #FFABD9);
     color: white;
