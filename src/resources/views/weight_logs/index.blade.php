@@ -87,11 +87,12 @@
                 <td>{{ number_format($log->weight, 1) }}kg</td>
                 <td>{{ $log->calories }}cal</td>
                 <td>{{ \Carbon\Carbon::parse($log->exercise_time)->format('H:i') }}</td>
-                <td>
+             <td>
                     <a href="{{ route('weight_logs.show', $log->id) }}">
                         <img src="{{ asset('images/icon-edit.svg') }}" alt="編集" width="20">
                     </a>
                 </td>
+
             </tr>
         @endforeach
     </tbody>

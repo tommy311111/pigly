@@ -39,13 +39,12 @@
     font-size: 16px;
     color: #777;
     margin-left: 10px;
+    white-space: nowrap;
 }
 
 .error-message {
     color: #F65A5A;
     font-size: 14px;
-    font-weight: 300;
-    height: 21px;
     margin-top: 5px;
 }
 

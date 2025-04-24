@@ -53,6 +53,8 @@ body {
 
 .header-btn:hover {
     background-color: #EAEAEA;
+    color: #333;
+    text-decoration: none;
 }
 
 .header-btn img {
@@ -66,14 +68,20 @@ body {
     min-height: 100vh;
 }
 
-
 .modal-overlay.show-modal {
-    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(150, 150, 150, 0.5);
+    /* ← 半透明 */
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+    /* 他要素より上に */
     padding: 30px;
-    background-color: rgb(150, 150, 150);
 }
 
 .modal-content {
@@ -86,7 +94,7 @@ body {
 
 .modal-title {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
     font-weight: bold;
 }
 

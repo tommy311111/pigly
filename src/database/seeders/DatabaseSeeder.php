@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-        UserSeeder::class,
-        WeightLogSeeder::class,
-        WeightTargetSeeder::class,
+        UsersTableSeeder::class,
+        WeightLogsTableSeeder::class,
+        WeightTargetsTableSeeder::class,
     ]);
     }
 }
